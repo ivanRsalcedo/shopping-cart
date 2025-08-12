@@ -44,31 +44,40 @@ body {
 }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 4.5em;
   line-height: 1.1;
 }
 
 button {
-  border-radius: 999px;
-  border: 1px solid transparent;
-  padding: 0.45em 1.3em;
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: inherit;
   background-color: var(--color-accent);
-  color: var(--color-block-bg);
-  transition: background-color 0.2s, border-color 0.2s;
+  color: white;
+  font-size: 22px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 3px solid var(--color-text);
+  box-shadow: 0 4px 0 var(--color-text);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
 }
 
 button:hover {
-  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--color-text);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-text);
 }
 
 a:hover {
   transform: scale(105%);
 }
 
-button:active,
 a:active,
 svg:hover {
   transform: scale(95%);
