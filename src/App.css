@@ -1,3 +1,51 @@
+header,
+footer {
+    background-color: var(--color-high);
+    color: var(--color-block-bg);
+}
+
+header {
+    padding: 15px;
+    height: 100px;
+}
+
+footer {
+    bottom: 0;
+    padding: 2px;
+}
+
+header,
+footer {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    padding-top: 120px;
+}
+
+.cart {
+    justify-self: end;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links * {
+    color: var(--color-block-bg);
+    font-size: clamp(20px, 2vw, 28px);
+}
+
+/* for upscaling pokemon pixelart */
 .pixel-art {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
