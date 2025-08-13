@@ -1,4 +1,4 @@
-import styles from './Shop.module.css'
+import './Shop.css'
 
 import ShopItem from "./ShopItem"
 
@@ -24,7 +24,7 @@ export default function Shop() {
     return (
         <div>
             <h1>Shop</h1>
-            <section className={styles.catalogue}>
+            <section className='catalogue'>
                 {catalogue.map((item) =>
                     <ShopItem
                         key={item.id}

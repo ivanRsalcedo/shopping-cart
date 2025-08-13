@@ -1,5 +1,4 @@
 import './App.css'
-import './App.mobile.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router'
 import Home from './components/Home'
 import Shop from './components/Shop'
