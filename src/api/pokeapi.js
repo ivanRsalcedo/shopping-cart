@@ -19,5 +19,3 @@ function abridge(raw) {
         image: raw.sprites.default,
     }
 }
-
-getItemByName('poke-ball');

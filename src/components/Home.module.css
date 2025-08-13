@@ -1,0 +1,11 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.home h1, .home p {
+    align-self: flex-start;
+}

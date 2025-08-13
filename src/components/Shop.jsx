@@ -1,16 +1,33 @@
+import styles from './Shop.module.css'
+
 import ShopItem from "./ShopItem"
-import { useState } from "react";
+
+import getItemByName from "../api/pokeapi";
+import { useEffect, useState } from "react";
+
+const presetItemList = ['poke-ball', 'great-ball', 'ultra-ball', 'potion', 'super-potion', 'x-attack', 'x-defense', 'moon-stone', 'thunder-stone', 'quick-claw', 'amulet-coin', 'lucky-egg'];
 
 export default function Shop() {
-
     const [catalogue, setCatalogue] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const items = await Promise.all(presetItemList.map((name) => getItemByName(name)));
+                setCatalogue(items);
+            } catch (e) {
+                console.error(e);
+            }
+        })();
+    }, []);
 
     return (
         <div>
             <h1>Shop</h1>
-            <section className='catalogue'>
+            <section className={styles.catalogue}>
                 {catalogue.map((item) =>
                     <ShopItem
+                        key={item.id}
                         id={item.id}
                         name={item.name}
                         price={item.price}
@@ -20,14 +37,6 @@ export default function Shop() {
                     />
                 )}
             </section>
-            <ShopItem
-                id={4}
-                name="Poké Ball"
-                price={200}
-                category="Standard Balls"
-                description="Used in battle: Attempts to catch a wild Pokémon."
-                image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
-            />
         </div>
     )
 }
