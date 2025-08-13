@@ -6,7 +6,7 @@
   --color-accent-hover: orange;
   --color-block-bg: #fffafa;
   --color-green: #70c16d;
-  --color-price: #3daf39;
+  --color-price: #1aaa70;
   --color-blue: #4a92ea;
   --color-high: #d16565;
   --color-mid: #cf984f;
@@ -65,12 +65,12 @@ button a {
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--color-text);
+  box-shadow: 0 6px 0 inherit;
 }
 
 button:active {
   transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--color-text);
+  box-shadow: 0 2px 0 inherit;
 }
 
 a:hover {
@@ -80,4 +80,10 @@ a:hover {
 a:active,
 svg:hover {
   transform: scale(95%);
+}
+
+hr {
+  border: none;
+  opacity: 20%;
+  margin: 10px;
 }

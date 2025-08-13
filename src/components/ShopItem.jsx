@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './ShopItem.module.css'
 
-export default function ShopItem(props) {
+export default function ShopItem({ id, name, price, category, description, image, addToCart }) {
 
     const [quantity, setQuantity] = useState(1);
-    const total = props.price * quantity;
+    const total = price * quantity;
 
     const inc = () => setQuantity(q => q + 1);
     const dec = () => setQuantity(q => Math.max(1, q - 1));
@@ -15,12 +15,12 @@ export default function ShopItem(props) {
     }
 
     return (
-        <div className={styles.card}>
-            <img className='pixel-art' src={props.image} alt={`${props.name} product image`} />
+        <div className={`${styles.shopitem} card`}>
+            <img className='pixel-art' src={image} alt={`${name} product image`} />
             <div className={styles.details}>
-                <h2 className={styles.name}>{props.name}</h2>
-                <span className={styles.category}>{props.category}</span>
-                <p className={styles.description}>{props.description}</p>
+                <h2 className={styles.name}>{name}</h2>
+                <span className={`tag ${styles.category}`}>{category}</span>
+                <p className={styles.description}>{description}</p>
                 <hr aria-hidden="true" />
                 <data className={styles.price} value={total}>₽ {total}</data>
                 <div className={styles.btnrow}>
@@ -29,7 +29,7 @@ export default function ShopItem(props) {
                         <input type="number" min={1} step={1} value={quantity} onChange={handleQtyChange} />
                         <button onClick={inc}>+</button>
                     </div>
-                    <button className={styles.btncart}>Add to Cart</button>
+                    <button className={styles.btncart} onClick={() => addToCart({ id, name, price, image, quantity })}>Add to Cart</button>
                 </div>
             </div>
         </div>

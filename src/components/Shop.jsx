@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const presetItemList = ['poke-ball', 'great-ball', 'ultra-ball', 'potion', 'super-potion', 'x-attack', 'x-defense', 'moon-stone', 'thunder-stone', 'quick-claw', 'amulet-coin', 'lucky-egg'];
 
-export default function Shop() {
+export default function Shop({ cart, setCart }) {
     const [catalogue, setCatalogue] = useState([]);
 
     useEffect(() => {
@@ -34,6 +34,22 @@ export default function Shop() {
                         category={item.category}
                         description={item.description}
                         image={item.image}
+                        addToCart={(newItem) => {
+                            setCart((previousCart) => {
+                                // find existing item if there's
+                                const search = previousCart.findIndex((i) => i.id === newItem.id);
+
+                                // if there's not just add
+                                if (search === -1) return [...previousCart, newItem];
+
+                                // else if there is find existing item and make sure to add to it's quantity instead
+                                const updatedCart = [...previousCart];
+                                const existingItem = updatedCart[search];
+
+                                updatedCart[search] = {...existingItem, quantity: existingItem.quantity + newItem.quantity };
+                                return updatedCart;
+                            });
+                        }}
                     />
                 )}
             </section>
