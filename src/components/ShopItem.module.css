@@ -1,0 +1,118 @@
+.card {
+    background-color: var(--color-block-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.name,
+.description,
+.category {
+    align-self: flex-start;
+}
+
+.description {
+    font-size: .9rem;
+    color: var(--color-text-lighter);
+    margin-top: 20px;
+}
+
+.category {
+    background-color: var(--color-high);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: .75rem;
+}
+
+.price {
+    color: var(--color-price);
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.card hr {
+    border: none;
+    border-top: 1px solid var(--color-text);
+    opacity: 20%;
+    margin: 10px;
+    width: 100%;
+}
+
+.card img {
+    background-color: rgb(228, 236, 245);
+    width: 100%;
+}
+
+.quantity {
+    border: 1px solid #c79898;
+    border-radius: 15px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 130px;
+    height: 40px;
+}
+
+.quantity button {
+    background-color: var(--color-high);
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    transform: none;
+    font-size: 30px;
+}
+
+.quantity button:hover {
+    filter: saturate(125%);
+}
+
+.quantity button:active {
+    filter: saturate(140%) brightness(90%);
+}
+
+.quantity input {
+    color: var(--color-text);
+    text-align: center;
+    border: none;
+    width: 50px;
+}
+
+.quantity input:focus {
+    outline: none;
+}
+
+.details {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btnrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btncart {
+    background-color: var(--color-high);
+    filter: saturate(115%);
+    font-size: 13px;
+    padding: 10px;
+}
+
+.quantity input[type=number]::-webkit-inner-spin-button,
+.quantity input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity input[type=number] {
+    -moz-appearance: textfield;
+}

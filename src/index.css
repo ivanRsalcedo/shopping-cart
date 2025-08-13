@@ -1,18 +1,17 @@
 :root {
   --color-bg: #fff0b1;
   --color-text: #7a403a;
+  --color-text-lighter: #94605c;
   --color-accent: #dd9d28;
   --color-accent-hover: orange;
   --color-block-bg: #fffafa;
   --color-green: #70c16d;
+  --color-price: #3daf39;
   --color-blue: #4a92ea;
   --color-high: #d16565;
   --color-mid: #cf984f;
   --color-low: #d1bb58;
   --color-default: #a58559;
-
-  --radius: 8px;
-  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 
   font-family: "Nunito", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
