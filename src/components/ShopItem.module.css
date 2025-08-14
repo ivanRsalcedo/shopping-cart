@@ -34,7 +34,19 @@
 }
 
 .shopitem img {
-    width: 100%;
+    width: 65%;
+}
+
+@media screen and (max-width: 1024px) {
+    .shopitem img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .shopitem img {
+        width: 100%;
+    }
 }
 
 .quantity {
@@ -86,13 +98,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .btncart {
     background-color: var(--color-high);
     filter: saturate(115%);
     font-size: 13px;
-    padding: 10px;
+    padding: 8px 10px;
 }
 
 .quantity input[type=number]::-webkit-inner-spin-button,
