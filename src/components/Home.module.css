@@ -6,6 +6,10 @@
     height: 600px;
 }
 
-.home h1, .home p {
-    align-self: flex-start;
+.herobtn {
+    background-color: var(--color-high);
+    filter: saturate(120%);
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
 }

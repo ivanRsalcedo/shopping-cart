@@ -8,7 +8,7 @@ export default function Home() {
             <h1>Home</h1>
             <p>Welcome to PokéMart Online!</p>
 
-            <button className="hero-button">
+            <button className={styles.herobtn}>
                 <Link to="/shop">
                     <h2>Start Your Trainer Journey!</h2>
                 </Link>
