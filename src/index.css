@@ -47,6 +47,10 @@ h1 {
   line-height: 1.1;
 }
 
+h1, h2, h3, h4, h5, h6, button, img, .tag, input {
+  z-index: 1;
+}
+
 button {
   background-color: var(--color-accent);
   color: white;
@@ -86,4 +90,12 @@ hr {
   border: none;
   opacity: 20%;
   margin: 10px;
+}
+
+.tag {
+  background-color: var(--color-high);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 25px;
+  font-size: .75rem;
 }

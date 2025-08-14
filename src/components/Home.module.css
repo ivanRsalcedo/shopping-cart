@@ -12,6 +12,5 @@
     font-size: 1rem;
     filter: saturate(120%);
     position: relative;
-    z-index: 1;
     margin-top: 15px;
 }
