@@ -1,21 +1,5 @@
-# React Template (Vite)
+# Shopping Cart
 
-## Quick start
-1. Click **Use this template** → **Create a new repository**
-2. Clone your new repo:
+A mock shopping cart app using PokeAPI.
 
-```bash
-git clone repo_name
-```
-
-```bash
-cd repo_name
-```
-
-```bash
-npm install
-npm run update:latest
-code .
-npm run dev:open
-```
-
+![App Screenshot](screenshot.png)
