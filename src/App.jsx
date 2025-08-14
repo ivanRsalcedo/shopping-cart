@@ -9,6 +9,8 @@ import { useState } from 'react'
 function App() {
 
   const [cart, setCart] = useState([]);
+  const itemCount = cart.reduce((sum, item) => sum + (item.quantity ?? 1), 0);
+
 
   return (
     <BrowserRouter>
@@ -16,7 +18,7 @@ function App() {
         <nav className='nav-links'>
           <Link to='/'>Home</Link>
           <Link to='/shop'>Shop</Link>
-          <Link to="/cart">Cart {cart.length > 0 && ` (${cart.length})`}</Link>
+          <Link to="/cart">Cart{itemCount > 0 && ` (${itemCount})`}</Link>
         </nav>
       </header>
 
