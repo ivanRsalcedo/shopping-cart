@@ -4,10 +4,12 @@ import ShopItem from "./ShopItem"
 
 import getItemByName from "../api/pokeapi";
 import { useEffect, useState } from "react";
+import { useOutletContext } from 'react-router';
 
 const presetItemList = ['poke-ball', 'great-ball', 'ultra-ball', 'potion', 'super-potion', 'x-attack', 'x-defense', 'moon-stone', 'thunder-stone', 'quick-claw', 'amulet-coin', 'lucky-egg'];
 
-export default function Shop({ cart, setCart }) {
+export default function Shop() {
+    const {cart, setCart} = useOutletContext();
     const [catalogue, setCatalogue] = useState([]);
 
     useEffect(() => {

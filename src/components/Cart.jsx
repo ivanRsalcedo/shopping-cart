@@ -1,8 +1,12 @@
 import CartItem from './CartItem';
 import OrderSummary from './OrderSummary';
+import { useOutletContext } from 'react-router';
 import './Cart.css';
 
-export default function Cart({ cart, setCart }) {
+export default function Cart() {
+
+    const {cart, setCart} = useOutletContext();
+
     function handleRemove(id) {
         setCart(cart.filter((i) => i.id !== id));
     }

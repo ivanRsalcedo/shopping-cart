@@ -1,9 +1,10 @@
 import './App.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router'
+import { BrowserRouter, Routes, Route } from 'react-router'
 import Home from './components/Home'
 import Shop from './components/Shop'
 import Cart from './components/Cart'
-import Pikachu from './assets/pikachu.svg'
+import AppLayout from './components/AppLayout'
+
 import { useState } from 'react'
 
 function App() {
@@ -14,26 +15,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <header>
-        <nav className='nav-links'>
-          <Link to='/'>Home</Link>
-          <Link to='/shop'>Shop</Link>
-          <Link to="/cart">Cart{itemCount > 0 && ` (${itemCount})`}</Link>
-        </nav>
-      </header>
-
-      <main>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/shop' element={<Shop cart={cart} setCart={setCart} />} />
-          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
-        </Routes>
-        <img src={Pikachu} alt="Pikachu silhouette" className="pikachu-bg" />
-      </main>
-
-      <footer>
-        <p>made by ivan</p>
-      </footer>
+      <Routes>
+        <Route path='/' element={<AppLayout cart={cart} setCart={setCart} itemCount={itemCount} />}>
+          <Route index element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/cart' element={<Cart />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }
