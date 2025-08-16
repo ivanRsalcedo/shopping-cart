@@ -29,7 +29,10 @@ export default function ShopItem({ id, name, price, category, description, image
                         <input type="number" min={1} step={1} value={quantity} onChange={handleQtyChange} />
                         <button onClick={inc}>+</button>
                     </div>
-                    <button className={styles.btncart} onClick={() => addToCart({ id, name, price, image, quantity })}>Add to Cart</button>
+                    <button className={styles.btncart} onClick={() => {
+                        addToCart({ id, name, price, image, quantity });
+                        setQuantity(1);
+                    }}>Add to Cart</button>
                 </div>
             </div>
         </div>
